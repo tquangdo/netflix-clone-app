@@ -19,11 +19,18 @@ function BannerComp() {
     }, [])
     return (
         <header className='banner'
-            style={{
-                backgroundSize: 'cover',
-                backgroundImage: `url(${BASE_URL_IMG}${stateMovie?.backdrop_path})`,
-                backgroundPosition: 'center center'
-            }}>
+            style={stateMovie.backdrop_path
+                ? {
+                    backgroundSize: 'cover',
+                    backgroundImage: `url(${BASE_URL_IMG}${stateMovie?.backdrop_path})`,
+                    backgroundPosition: 'center center'
+                }
+                : {
+                    backgroundSize: 'cover',
+                    backgroundImage: '',
+                    backgroundPosition: 'center center'
+                }
+            }>
             <div className='banner__contents'>
                 <h1 className='banner__title'>
                     {stateMovie?.title || stateMovie?.name || stateMovie?.original_name}

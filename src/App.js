@@ -3,11 +3,12 @@ import './App.css'
 import RowComp from './components/RowComp'
 import requests from './utils/api/requests'
 import BannerComp from './components/BannerComp'
+import NavComp from './components/NavComp'
 
 function App() {
   return (
     <div className="App">
-      {/* <NavComp /> */}
+      <NavComp />
       <BannerComp />
       <RowComp isLargeRow propsTitle='PHIM GỐC NETFLIX' propsFetchUrl={requests.fetchNetflixOriginals} />
       <RowComp propsTitle='Theo trend hiện giờ' propsFetchUrl={requests.fetchTrending} />
